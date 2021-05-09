@@ -7,6 +7,8 @@ read -p '# of Agents: [e.g., 3]' numofagents
 k3d cluster create $clustername \
  --servers $numofservers \
  --agents $numofagents \
- --k3s-server-arg --no-deploy\
+ --kubeconfig-update-default \
+ --k3s-server-arg --no-deploy \
  --k3s-server-arg traefik \
- --registry-create
+ --k3s-server-arg --cluster-init
+ 
